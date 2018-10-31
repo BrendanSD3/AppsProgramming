@@ -12,21 +12,17 @@ public class BookManager {
     
     public List<Book> getBooksByTitle(String title) {
         List<Book> books = new ArrayList<>();
-        for (Book b : bookList) {
-            if (b.getTitle().equals(title)) {
-                books.add(b);
-            }
-        }
+        bookList.stream().filter((b) -> (b.getTitle().equals(title))).forEachOrdered((b) -> {
+            books.add(b);
+        });
         return books;
     }
     
     public List<Book> getBooksByCategory(String category) {
         List<Book> books = new ArrayList<>();
-        for (Book b : bookList) {
-            if (b.getCategory().equals(category)) {
-                books.add(b);
-            }
-        }
+        bookList.stream().filter((b) -> (b.getCategory().equals(category))).forEachOrdered((b) -> {
+            books.add(b);
+        });
         return books;
     }
     
