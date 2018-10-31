@@ -22,8 +22,8 @@ public class Main {
     }
     
     public static void printList(List<Book> bookList) {
-        for (Book b : bookList) {
+        bookList.forEach((b) -> {
             System.out.println(b);
-        }
+        });
     }
 }
